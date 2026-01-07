@@ -1,14 +1,11 @@
 import random
 from collections import defaultdict
 
-# Load text
 with open("text.txt", "r", encoding="utf-8") as file:
     text = file.read().lower()
 
-# Tokenize
 words = text.split()
 
-# Build Markov Chain
 markov_chain = defaultdict(list)
 
 for i in range(len(words) - 1):
@@ -29,9 +26,9 @@ def generate_text(start_word, length=20):
         result.append(current_word)
 
     return " ".join(result)
-
-# ---- USER INPUT ----
+    
 start_word = input("Enter a starting word: ").lower()
 
 print("\nGenerated Text:\n")
 print(generate_text(start_word))
+
